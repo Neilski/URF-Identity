@@ -7,6 +7,6 @@ The project was built from the standard Visual Studio MVC application with exter
 
 * The POCO application models (including the customised Identity models)
 * The Generic Unit of Work and Repositories Framework
-* The cusomised ASP.NET Identity implementation
+* The customised ASP.NET Identity implementation
 * The Data Access layer (DAL)
 
