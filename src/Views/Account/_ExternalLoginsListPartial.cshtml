@@ -1,0 +1,38 @@
+﻿@using Identity.Resources
+@using Microsoft.Owin.Security
+@model Identity.UI.ViewModels.Account.ExternalLoginListViewModel
+
+<h4>
+    @AccountResources.ExternalLoginsList_Title
+</h4>
+
+<hr/>
+
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes().ToList();
+
+    if (!loginProviders.Any())
+    {
+        <p class="text-muted">
+            @AccountResources.ExternalLoginsList_NoProviders
+        </p>
+    }
+    else
+    {
+        using (Html.BeginForm("ExternalLogin", "Account", new {Model.ReturnUrl}))
+        {
+            @Html.AntiForgeryToken()
+            <div id="socialLoginList">
+                <p>
+                    @foreach (AuthenticationDescription p in loginProviders)
+                    {
+                        <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">
+                            <i class="fa fa-@(p.AuthenticationType.ToLower())-square"></i>
+                            @p.AuthenticationType
+                        </button>
+                    }
+                </p>
+            </div>
+        }
+    }
+}

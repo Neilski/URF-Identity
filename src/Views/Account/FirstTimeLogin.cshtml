@@ -1,0 +1,42 @@
+﻿@using Identity.Resources
+@using Microsoft.Owin.Security
+@model Identity.UI.ViewModels.Account.FirstTimeLoginViewModel
+
+@{
+    ViewBag.Title = AccountResources.FirstTimeLogin_Title;
+    var colClass = (Model.ExternalLogins.Count > 0) ? "col-md-6" : "col-md-12";
+}
+
+<h1>@ViewBag.Title</h1>
+
+@Html.Raw(AccountResources.FirstTimeLogin_Introduction)
+
+<div class="row">
+    @if (Model.ExternalLogins.Count > 0)
+    {
+        <div class="@colClass">
+            <h3>@AccountResources.FirstTimeLogin_Link_Title</h3>
+            @Html.Raw(AccountResources.FirstTimeLogin_Link_Description)
+
+            @using (Html.BeginForm("LinkLogin", "Manage"))
+            {
+                @Html.AntiForgeryToken()
+                <div id="socialLoginList">
+                    <p>
+                        @foreach (AuthenticationDescription p in Model.ExternalLogins)
+                        {
+                            <button class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType">
+                                <i class="fa fa-@(p.AuthenticationType.ToLower())-square"></i>
+                                @p.AuthenticationType
+                            </button>
+                        }
+                    </p>
+                </div>
+            }
+        </div>
+    }
+    <div class="@colClass">
+        <h3>@AccountResources.FirstTimeLogin_2FA_Title</h3>
+        @Html.Raw(String.Format(AccountResources.FirstTimeLogin_2FA_Description, Url.Action("Index", "Manage")))
+    </div>
+</div>

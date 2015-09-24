@@ -1,0 +1,172 @@
+﻿@import "_variables.less";
+@import "bootstrap-plus.less";
+@import "ui-widgets.less";
+
+@color-light-grey: #ddd;
+@color-grey: #aaa;
+
+@grid-item-gutter-width: 10px;
+@grid-item-image-width: 200px;
+@grid-item-content-margin: 15px;
+@grid-item-border-width: 2px;
+@grid-item-width: (@grid-item-image-width + (2 * @grid-item-content-margin) + (2 * @grid-item-border-width));
+
+body {
+    padding-bottom: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.gravatar {
+    border-radius: 5px;
+}
+
+#main {
+    position: relative;
+    padding: 0 15px;
+}
+
+
+header {
+    position: relative;
+
+    h1 {
+        margin-top: 0;
+        font-size: 2.8em;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: @color-grey;
+        text-align: center;
+        border-bottom: none;
+
+        & > a {
+            color: @color-grey !important;
+            text-decoration: none !important;
+        }
+    }
+
+    .partial-login {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+    }
+
+    .btn, .btn-default {
+        color: @color-grey;
+    }
+}
+
+.body-content {
+    margin-top: 60px;
+}
+
+/* Allow only vertical resizing of textareas. */
+textarea {
+    resize: vertical;
+}
+
+
+.marketing-jump-list {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+     & > ul {
+         display: inline-block;
+     }
+}
+
+#masonry-grid {
+    position: relative;
+    margin: 2.0em auto 0;
+    height: 300px;       //enough to cover .grid-stamp
+    width: 100%;
+
+    .grid-sizer, .grid-item, .grid-stamp {
+        width: @grid-item-width;
+     }
+
+    .grid-stamp {
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #fff;
+        background: #9e0b0f;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        z-index: 99;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+
+            &:hover {
+                color: darken(#fff, 15%);
+            }
+        }
+
+        .title {
+            margin: 1.0em;
+            display: block;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .pre-title {
+            font-size: 0.85em;
+        }
+
+        .main-title {
+            font-size: 1.8em;
+        }
+
+        .link {
+            font-size: 1.1em;
+        }
+    }
+
+    .gutter-sizer {
+        width: 10px;
+    }
+
+    .grid-item {
+        position: absolute;
+        top: -500px;
+        left: -500px;
+        background: #fafafa;
+        border: @grid-item-border-width solid #333;
+        border-color: #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+
+        .grid-content {
+            margin: @grid-item-content-margin;
+            text-align: center;
+        }
+
+        .label {
+            position: absolute;
+            left: 1.0em;
+            top: 1.0em;
+            display: inline-block;
+            background-color: #000;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 0.9em;
+            border: solid 2px #fff;
+        }
+
+        .promo-image {
+            background-color: #ccc;
+            border: solid 1px #ccc;
+            border-radius: 3px;
+        }
+
+        .title {
+            margin: 1.0em 0;
+            color: #000;
+            font-weight: bold;
+        }
+    }
+}
+
+

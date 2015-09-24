@@ -1,0 +1,12 @@
+﻿@using Identity.Resources
+
+@{
+    ViewBag.Title = AccountResources.ExternalLoginFailure_Title;
+}
+
+
+<h2>@ViewBag.Title</h2>
+
+<p class="text-danger">
+    @Html.Raw(AccountResources.ExternalLoginFailure_FailureMessage)
+</p>

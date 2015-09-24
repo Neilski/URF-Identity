@@ -1,0 +1,11 @@
+﻿@using Identity.Resources
+@{
+    ViewBag.Title = AccountResources.ConfirmEmail_Title;
+    var manageLoginsLink = Url.Action("ManageLogins", "Manage");
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    @Html.Raw(String.Format(AccountResources.ConfirmEmail_ThankYou, Url.Action("Login", "Account")))
+</div>
