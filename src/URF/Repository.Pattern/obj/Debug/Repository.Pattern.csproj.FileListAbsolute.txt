@@ -1,0 +1,11 @@
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Pattern\bin\Debug\Repository.Pattern.dll.config
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Pattern\bin\Debug\Repository.Pattern.dll
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Pattern\bin\Debug\Repository.Pattern.pdb
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Pattern\bin\Debug\EntityFramework.dll
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Pattern\bin\Debug\EntityFramework.SqlServer.dll
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Pattern\bin\Debug\LinqKit.dll
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Pattern\bin\Debug\EntityFramework.xml
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Pattern\bin\Debug\EntityFramework.SqlServer.xml
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Pattern\obj\Debug\Repository.Pattern.csprojResolveAssemblyReference.cache
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Pattern\obj\Debug\Repository.Pattern.dll
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Pattern\obj\Debug\Repository.Pattern.pdb

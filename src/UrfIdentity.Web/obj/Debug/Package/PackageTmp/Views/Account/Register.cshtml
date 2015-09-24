@@ -1,0 +1,25 @@
+﻿@using Identity.Resources
+@model Identity.UI.ViewModels.Account.RegisterViewModel
+
+@{
+    ViewBag.Title = AccountResources.Register_Title;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h4>@AccountResources.Register_SubTitle</h4>
+
+<hr/>
+
+<div class="row">
+    <div class="col-md-6">
+        <p>
+            Interesting information will go here
+        </p>
+    </div>
+    <div class="col-md-6">
+        <div class="well">
+            @Html.Partial("_RegistrationForm")
+        </div>
+    </div>
+</div>

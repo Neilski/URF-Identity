@@ -1,0 +1,7 @@
+D:\Development\Projects\VS2015\UrfIdentity\Libraries\Resources\bin\Debug\Resources.dll
+D:\Development\Projects\VS2015\UrfIdentity\Libraries\Resources\bin\Debug\Resources.pdb
+D:\Development\Projects\VS2015\UrfIdentity\Libraries\Resources\obj\Debug\Resources.csprojResolveAssemblyReference.cache
+D:\Development\Projects\VS2015\UrfIdentity\Libraries\Resources\obj\Debug\Resources.ModelValidationResources.resources
+D:\Development\Projects\VS2015\UrfIdentity\Libraries\Resources\obj\Debug\Resources.csproj.GenerateResource.Cache
+D:\Development\Projects\VS2015\UrfIdentity\Libraries\Resources\obj\Debug\Resources.dll
+D:\Development\Projects\VS2015\UrfIdentity\Libraries\Resources\obj\Debug\Resources.pdb

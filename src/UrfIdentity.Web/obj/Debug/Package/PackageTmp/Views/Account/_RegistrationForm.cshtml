@@ -1,0 +1,67 @@
+﻿@using Identity.Resources
+@model Identity.UI.ViewModels.Account.RegisterViewModel
+
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post,
+    new {@class = "form-horizontal", role = "form"}))
+{
+    @Html.AntiForgeryToken()
+
+
+    @Html.ValidationSummary("", new {@class = "text-danger"})
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName, new {@class = "col-xs-5 control-label"})
+        <div class="col-xs-7">
+            @Html.TextBoxFor(m => m.FirstName, new {@class = "form-control", autofocus = true})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastName, new {@class = "col-xs-5 control-label"})
+        <div class="col-xs-7">
+            @Html.TextBoxFor(m => m.LastName, new {@class = "form-control"})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.JobTitle, new {@class = "col-xs-5 control-label"})
+        <div class="col-xs-7">
+            @Html.TextBoxFor(m => m.JobTitle, new {@class = "form-control"})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Company, new {@class = "col-xs-5 control-label"})
+        <div class="col-xs-7">
+            @Html.TextBoxFor(m => m.Company, new {@class = "form-control"})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Phone, new {@class = "col-xs-5 control-label"})
+        <div class="col-xs-7">
+            @Html.TextBoxFor(m => m.Phone, new {@class = "form-control"})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new {@class = "col-xs-5 control-label"})
+        <div class="col-xs-7">
+            @Html.TextBoxFor(m => m.Email, new {@class = "form-control"})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password, new {@class = "col-xs-5 control-label"})
+        <div class="col-xs-7">
+            @Html.PasswordFor(m => m.Password, new {@class = "form-control"})
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ConfirmPassword, new {@class = "col-xs-5 control-label"})
+        <div class="col-xs-7">
+            @Html.PasswordFor(m => m.ConfirmPassword, new {@class = "form-control"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-12">
+            <input type="submit" class="btn btn-default btn-red center-block" value="@AccountResources.GetAccess"/>
+        </div>
+    </div>
+}

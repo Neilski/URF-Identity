@@ -1,0 +1,5 @@
+D:\Development\Projects\VS2015\UrfIdentity\Libraries\Abl\bin\Debug\Abl.dll
+D:\Development\Projects\VS2015\UrfIdentity\Libraries\Abl\bin\Debug\Abl.pdb
+D:\Development\Projects\VS2015\UrfIdentity\Libraries\Abl\obj\Debug\Abl.csprojResolveAssemblyReference.cache
+D:\Development\Projects\VS2015\UrfIdentity\Libraries\Abl\obj\Debug\Abl.dll
+D:\Development\Projects\VS2015\UrfIdentity\Libraries\Abl\obj\Debug\Abl.pdb

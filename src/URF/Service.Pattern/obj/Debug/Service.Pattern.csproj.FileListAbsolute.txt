@@ -1,0 +1,7 @@
+D:\Development\Projects\VS2015\UrfIdentity\Urf\Service.Pattern\bin\Debug\Service.Pattern.dll
+D:\Development\Projects\VS2015\UrfIdentity\Urf\Service.Pattern\bin\Debug\Service.Pattern.pdb
+D:\Development\Projects\VS2015\UrfIdentity\Urf\Service.Pattern\bin\Debug\Repository.Pattern.dll
+D:\Development\Projects\VS2015\UrfIdentity\Urf\Service.Pattern\bin\Debug\Repository.Pattern.pdb
+D:\Development\Projects\VS2015\UrfIdentity\Urf\Service.Pattern\obj\Debug\Service.Pattern.csprojResolveAssemblyReference.cache
+D:\Development\Projects\VS2015\UrfIdentity\Urf\Service.Pattern\obj\Debug\Service.Pattern.dll
+D:\Development\Projects\VS2015\UrfIdentity\Urf\Service.Pattern\obj\Debug\Service.Pattern.pdb

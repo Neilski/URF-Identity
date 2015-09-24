@@ -1,0 +1,16 @@
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\bin\Debug\UrfIdentity.Models.dll.config
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\bin\Debug\UrfIdentity.Models.dll
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\bin\Debug\UrfIdentity.Models.pdb
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\bin\Debug\EntityFramework.dll
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\bin\Debug\Repository.Pattern.dll
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\bin\Debug\Repository.Pattern.pdb
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\bin\Debug\EntityFramework.xml
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\obj\Debug\UrfIdentity.Models.csprojResolveAssemblyReference.cache
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\obj\Debug\UrfIdentity.Models.dll
+D:\Development\Projects\VS2015\UrfIdentity\UrfIdentity.Models\obj\Debug\UrfIdentity.Models.pdb

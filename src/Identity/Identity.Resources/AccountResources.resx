@@ -1,0 +1,628 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="account" xml:space="preserve">
+    <value>account</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AddPhoneNumberCtrl_SecurityCodeMessage" xml:space="preserve">
+    <value>Your security code id: {0}</value>
+  </data>
+  <data name="AddPhoneNumber_SubTitle" xml:space="preserve">
+    <value>Add a phone number.</value>
+  </data>
+  <data name="AddPhoneNumber_Title" xml:space="preserve">
+    <value>Phone Number.</value>
+  </data>
+  <data name="AddRole" xml:space="preserve">
+    <value>Add Role</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="ChangePassword_SubTitle" xml:space="preserve">
+    <value>Change your account password.</value>
+  </data>
+  <data name="ChangePassword_Title" xml:space="preserve">
+    <value>Change Password.</value>
+  </data>
+  <data name="ChangeYourPassword" xml:space="preserve">
+    <value>Change your password</value>
+  </data>
+  <data name="ClickHereToLogin" xml:space="preserve">
+    <value>click here to login</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="Company_Length" xml:space="preserve">
+    <value>{0} must not exceed {1} characters</value>
+  </data>
+  <data name="Company_Required" xml:space="preserve">
+    <value>Please enter the name of your company or the organisation that you work for</value>
+  </data>
+  <data name="ConfirmationEmailSent_Message" xml:space="preserve">
+    <value>&lt;p&gt;A confirmation email has been sent to your &lt;strong&gt;{0}&lt;/strong&gt; email address.&lt;/p&gt;
+&lt;p&gt;Please click on the link within the email to confirm your email address.&lt;/p&gt;
+&lt;p&gt;Once you have confirmed your email address you will be able to login.&lt;/p&gt;</value>
+  </data>
+  <data name="ConfirmationEmailSent_Title" xml:space="preserve">
+    <value>Nearly there.</value>
+  </data>
+  <data name="ConfirmEmailBeforeLogin_Message" xml:space="preserve">
+    <value>&lt;p&gt;Hold on there - you must confirm your email address before you can login.&lt;/p&gt;</value>
+  </data>
+  <data name="ConfirmEmailBeforeLogin_Title" xml:space="preserve">
+    <value>Hold On!</value>
+  </data>
+  <data name="ConfirmEmail_ThankYou" xml:space="preserve">
+    <value>&lt;p&gt;Thank you for confirming your email address.  All you need to do now is &lt;a href="{0}"&gt;login&lt;/a&gt;.</value>
+  </data>
+  <data name="ConfirmEmail_Title" xml:space="preserve">
+    <value>Confirm Email Address.</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="ConfirmPassword_Compare" xml:space="preserve">
+    <value>Oops - your passwords do not match</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Current Password</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailConfirmed" xml:space="preserve">
+    <value>Email Confirmed?</value>
+  </data>
+  <data name="EmailLink" xml:space="preserve">
+    <value>Email Link</value>
+  </data>
+  <data name="Email_Invalid" xml:space="preserve">
+    <value>Sorry, that looks like an invalid email address format</value>
+  </data>
+  <data name="Email_Required" xml:space="preserve">
+    <value>Please enter your email address</value>
+  </data>
+  <data name="Enable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="ExternalLoginConfirmation_AssociateAccount" xml:space="preserve">
+    <value>Associate your {0} account.</value>
+  </data>
+  <data name="ExternalLoginConfirmation_AssociationForm" xml:space="preserve">
+    <value>Account Association</value>
+  </data>
+  <data name="ExternalLoginConfirmation_AuthenticationSuccess" xml:space="preserve">
+    <value>You've successfully authenticated with &lt;strong&gt;{0}&lt;/strong&gt;. Please enter a user name for this site below and click the Register button to finish logging in.</value>
+  </data>
+  <data name="ExternalLoginConfirmation_Title" xml:space="preserve">
+    <value>Register.</value>
+  </data>
+  <data name="ExternalLoginFailure_FailureMessage" xml:space="preserve">
+    <value>Unsuccessful login with remote service.</value>
+  </data>
+  <data name="ExternalLoginFailure_Title" xml:space="preserve">
+    <value>Login Failure.</value>
+  </data>
+  <data name="ExternalLogins" xml:space="preserve">
+    <value>External Logins</value>
+  </data>
+  <data name="ExternalLoginsList_NoProviders" xml:space="preserve">
+    <value>There are no external authentication providers registered at this time</value>
+  </data>
+  <data name="ExternalLoginsList_Title" xml:space="preserve">
+    <value>Use another service to login.</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="FirstName_Required" xml:space="preserve">
+    <value>Please tell us your first name</value>
+  </data>
+  <data name="FirstTimeLogin_2FA_Description" xml:space="preserve">
+    <value>&lt;p&gt;
+    Visit the
+    &lt;a href="{0}"&gt;Account Management&lt;/a&gt;
+    page and enable Two-Factor Authentication.  Once enabled, a code
+    number will be sent to your email address or mobile phone every
+    time you login.  Once enabled, this will mechanism will further
+    improve your online security.
+&lt;/p&gt;</value>
+  </data>
+  <data name="FirstTimeLogin_2FA_Title" xml:space="preserve">
+    <value>Further secure your account with Two-Factor Authentication</value>
+  </data>
+  <data name="FirstTimeLogin_Introduction" xml:space="preserve">
+    <value>&lt;p&gt;
+    Now that you are a fully signed&amp;ndash;up user you might want to&amp;hellip;
+&lt;/p&gt;</value>
+  </data>
+  <data name="FirstTimeLogin_Link_Description" xml:space="preserve">
+    <value>&lt;p&gt;
+    Link your UrfIdentity account to LinkedIn network. This will allow
+    you to conveniently login in the future using your LinkedIn
+    service.
+&lt;/p&gt;</value>
+  </data>
+  <data name="FirstTimeLogin_Link_Title" xml:space="preserve">
+    <value>Link to your LinkedIn Account</value>
+  </data>
+  <data name="FirstTimeLogin_Title" xml:space="preserve">
+    <value>First Time Login</value>
+  </data>
+  <data name="ForgotPasswordConfirmation_ReminderMessage" xml:space="preserve">
+    <value>Please check your email to reset your password.</value>
+  </data>
+  <data name="ForgotPasswordConfirmation_Title" xml:space="preserve">
+    <value>Forgot Password Confirmation.</value>
+  </data>
+  <data name="ForgotPasswordCtrl_Message" xml:space="preserve">
+    <value>Please reset your password by clicking &lt;a href="{0}"&gt;here&lt;/a&gt;.</value>
+  </data>
+  <data name="ForgotPassword_SubTitle" xml:space="preserve">
+    <value>Enter your email address.</value>
+  </data>
+  <data name="ForgotPassword_Title" xml:space="preserve">
+    <value>Forgot Password?</value>
+  </data>
+  <data name="HasPassword" xml:space="preserve">
+    <value>Has Password?</value>
+  </data>
+  <data name="HasTwoFactorAuthentication" xml:space="preserve">
+    <value>Two-Factor Authentication Enabled?</value>
+  </data>
+  <data name="JobTitle" xml:space="preserve">
+    <value>Job Title</value>
+  </data>
+  <data name="JobTitle_Required" xml:space="preserve">
+    <value>Please tell us your job title</value>
+  </data>
+  <data name="LastLogin" xml:space="preserve">
+    <value>Last Login</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="LastName_Required" xml:space="preserve">
+    <value>Please tell us your last name</value>
+  </data>
+  <data name="LockedOut" xml:space="preserve">
+    <value>Locked-Out?</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="LoginCtrl_InvalidLoginAttempt" xml:space="preserve">
+    <value>Invalid login attempt.</value>
+  </data>
+  <data name="LoginWithLinkedIn" xml:space="preserve">
+    <value>Login with LinkedIn</value>
+  </data>
+  <data name="Login_ForgotPassword" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="Login_RegisterAsANewUser" xml:space="preserve">
+    <value>Register as a new user</value>
+  </data>
+  <data name="Login_Title" xml:space="preserve">
+    <value>Log In.</value>
+  </data>
+  <data name="Login_UseLocalAccount" xml:space="preserve">
+    <value>Use your UrfIdentity local account to login.</value>
+  </data>
+  <data name="Manage" xml:space="preserve">
+    <value>Manage</value>
+  </data>
+  <data name="ManageIndex_SubTitle" xml:space="preserve">
+    <value>Change your account settings.</value>
+  </data>
+  <data name="ManageIndex_Title" xml:space="preserve">
+    <value>Manage Account.</value>
+  </data>
+  <data name="ManageLogins_SubTitle" xml:space="preserve">
+    <value>Registered logins.</value>
+  </data>
+  <data name="ManageLogins_Title" xml:space="preserve">
+    <value>Manage Your External Logins.</value>
+  </data>
+  <data name="ManageMessageId_AddPhoneSuccess" xml:space="preserve">
+    <value>Your phone number has been added.</value>
+  </data>
+  <data name="ManageMessageId_ChangePasswordSuccess" xml:space="preserve">
+    <value>Your password has been changed.</value>
+  </data>
+  <data name="ManageMessageId_Error" xml:space="preserve">
+    <value>An error has occurred.</value>
+  </data>
+  <data name="ManageMessageId_RemoveLoginSuccess" xml:space="preserve">
+    <value>The external login was removed.</value>
+  </data>
+  <data name="ManageMessageId_RemovePhoneSuccess" xml:space="preserve">
+    <value>Your phone number has been removed.</value>
+  </data>
+  <data name="ManageMessageId_SetPasswordSuccess" xml:space="preserve">
+    <value>Your password has been set.</value>
+  </data>
+  <data name="ManageMessageId_SetTwoFactorSuccess" xml:space="preserve">
+    <value>Your two-factor authentication provider has been set.</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Never" xml:space="preserve">
+    <value>Never</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="NewPassword_Length" xml:space="preserve">
+    <value>Your new password must be between {1} and {2} characters in length</value>
+  </data>
+  <data name="NewPassword_Required" xml:space="preserve">
+    <value>You must specify your new password</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="NoRolesHaveBeenDefined" xml:space="preserve">
+    <value>No Roles have been defined!</value>
+  </data>
+  <data name="OAuthProviderList" xml:space="preserve">
+    <value>Providers</value>
+  </data>
+  <data name="OAuthProvider_Required" xml:space="preserve">
+    <value>An authentication provider must be selected</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Password_Format" xml:space="preserve">
+    <value>Your {0} must be at least 8 characters long and contain at least: 1 uppercase character (A-Z), one lower-case character (a-z), one digit (0-9), one non-character/digit (e.g. _-$#!£)</value>
+  </data>
+  <data name="Password_Required" xml:space="preserve">
+    <value>Please enter your {0}</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="PhoneNumber_Invalid" xml:space="preserve">
+    <value>The entered phone number is invalid</value>
+  </data>
+  <data name="PhoneNumber_Required" xml:space="preserve">
+    <value>Please enter your phone number</value>
+  </data>
+  <data name="Phone_Required" xml:space="preserve">
+    <value>Please enter your phone number</value>
+  </data>
+  <data name="PlainString_Format" xml:space="preserve">
+    <value>{0} can only contain alpha-numeric characters, spaces and hyphens</value>
+  </data>
+  <data name="Please" xml:space="preserve">
+    <value>Please</value>
+  </data>
+  <data name="ProblemAddingRolesToUser" xml:space="preserve">
+    <value>Problem adding Roles to user</value>
+  </data>
+  <data name="ProblemRemovingRolesFromUser" xml:space="preserve">
+    <value>Problem removing Roles from user</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="RegisteredLoginList" xml:space="preserve">
+    <value>Registered Logins</value>
+  </data>
+  <data name="RegisterEmailConfirmation_Message" xml:space="preserve">
+    <value>Please confirm your account by clicking &lt;a href="{0}"&gt;here&lt;/a&gt;.</value>
+  </data>
+  <data name="RegisterEmailConfirmation_Subject" xml:space="preserve">
+    <value>Confirm your account</value>
+  </data>
+  <data name="Register_SubTitle" xml:space="preserve">
+    <value>Create a new account.</value>
+  </data>
+  <data name="Register_Title" xml:space="preserve">
+    <value>Register.</value>
+  </data>
+  <data name="RememberBrowser" xml:space="preserve">
+    <value>Remember this browser?</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="ResendEmailConfirmation" xml:space="preserve">
+    <value>Resend Email Confirmation</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="ResetPasswordConfirmation_Link" xml:space="preserve">
+    <value>click here to log in</value>
+  </data>
+  <data name="ResetPasswordConfirmation_LinkEpilog" xml:space="preserve">
+    <value>.</value>
+  </data>
+  <data name="ResetPasswordConfirmation_LinkProlog" xml:space="preserve">
+    <value>Please</value>
+  </data>
+  <data name="ResetPasswordConfirmation_Title" xml:space="preserve">
+    <value>Reset Password Confirmation.</value>
+  </data>
+  <data name="ResetPasswordConfirmation_YourPasswordHasBeenReset" xml:space="preserve">
+    <value>Your password has been reset.</value>
+  </data>
+  <data name="ResetPassword_SubTitle" xml:space="preserve">
+    <value>Reset your account password.</value>
+  </data>
+  <data name="ResetPassword_Title" xml:space="preserve">
+    <value>Reset Password.</value>
+  </data>
+  <data name="ReturnUrl" xml:space="preserve">
+    <value>Return URL</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="RoleAddedSuccessfully" xml:space="preserve">
+    <value>Role '{0}' added successfully</value>
+  </data>
+  <data name="RoleAlreadyExists" xml:space="preserve">
+    <value>Role '{0}' already exists - request ignored!</value>
+  </data>
+  <data name="RoleDeletedSuccessfully" xml:space="preserve">
+    <value>Role '{0}' deleted successfully</value>
+  </data>
+  <data name="RoleManager" xml:space="preserve">
+    <value>Role Manager</value>
+  </data>
+  <data name="RoleName_Placeholder" xml:space="preserve">
+    <value>RoleName</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="SecurityCode" xml:space="preserve">
+    <value>Security Code</value>
+  </data>
+  <data name="SecurityCode_Required" xml:space="preserve">
+    <value>You must enter the most recent security code sent to your account</value>
+  </data>
+  <data name="SelectedOAuthProvider" xml:space="preserve">
+    <value>Selected Provider</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="SendCode_SubTitle" xml:space="preserve">
+    <value>Send verification code.</value>
+  </data>
+  <data name="SendCode_Title" xml:space="preserve">
+    <value>Send Code.</value>
+  </data>
+  <data name="SetPassword" xml:space="preserve">
+    <value>Set Password</value>
+  </data>
+  <data name="SetPassword_Message" xml:space="preserve">
+    <value>You do not have a local username/password for this site.  Add a local account so you can log  in without an external login.</value>
+  </data>
+  <data name="SetPassword_SubTitle" xml:space="preserve">
+    <value>Create local login.</value>
+  </data>
+  <data name="SetPassword_Title" xml:space="preserve">
+    <value>Create Password.</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="TheRequestedUserWasNotFound" xml:space="preserve">
+    <value>The requested user was not found!</value>
+  </data>
+  <data name="TwoFactorAuthentication" xml:space="preserve">
+    <value>Two-Factor Authentication</value>
+  </data>
+  <data name="UnableToCreateRole" xml:space="preserve">
+    <value>Unable to create Role '{0}'!</value>
+  </data>
+  <data name="UnableToDeleteRole" xml:space="preserve">
+    <value>Unable to delete Role '{0}'!</value>
+  </data>
+  <data name="UnableToFindRequestedRole" xml:space="preserve">
+    <value>Unable to find requested Role - perhaps it has been deleted!</value>
+  </data>
+  <data name="UnableToResendEmailConfirmation" xml:space="preserve">
+    <value>&lt;p&gt;Sorry, but we have not been able to resend an account confirmation email to your account.&lt;/p&gt;</value>
+  </data>
+  <data name="UnassignedExternalLogin_Message" xml:space="preserve">
+    <value>&lt;p&gt;You have attempted to login with your {0} account but unfortunately the user details are not associated a local UrfIdentity account.&lt;/p&gt;
+&lt;p&gt;You can either &lt;a href="{1}"&gt;login&lt;/a&gt; using your existing UrfIdentity account and then associate your {0} login to your account &amp;ndash; this will make future logins more convenient, or&amp;helip;  If you do not currently have an UrfIdentity account you can &lt;a href="{2}"&gt;create one here&lt;/a&gt;.&lt;/p&gt;</value>
+  </data>
+  <data name="UnassignedExternalLogin_Title" xml:space="preserve">
+    <value>Psst! Need an UrfIdentity Login?</value>
+  </data>
+  <data name="UserManager" xml:space="preserve">
+    <value>User Manager</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="UsersRolesUpdatedSuccessfully" xml:space="preserve">
+    <value>User Roles updated successfully ({0} added/{1} removed)</value>
+  </data>
+  <data name="User_Account" xml:space="preserve">
+    <value>User Account</value>
+  </data>
+  <data name="User_Role" xml:space="preserve">
+    <value>User Role</value>
+  </data>
+  <data name="VerifyCodeCtrl_InvalidCode" xml:space="preserve">
+    <value>Invalid code.</value>
+  </data>
+  <data name="VerifyCode_SubTitle" xml:space="preserve">
+    <value>Enter verification code.</value>
+  </data>
+  <data name="VerifyCode_Title" xml:space="preserve">
+    <value>Verify.</value>
+  </data>
+  <data name="VerifyPhoneNumberCtrl_FailedToVerifyPhone" xml:space="preserve">
+    <value>Failed to verify phone.</value>
+  </data>
+  <data name="VerifyPhoneNumber_SubTitle" xml:space="preserve">
+    <value>Enter verification code.</value>
+  </data>
+  <data name="VerifyPhoneNumber_Title" xml:space="preserve">
+    <value>Verify Phone Number.</value>
+  </data>
+  <data name="GetAccess" xml:space="preserve">
+    <value>Get Access</value>
+  </data>
+  <data name="OAuth_Email_Body" xml:space="preserve">
+    <value>Your UrfIdentity security code is {0}</value>
+  </data>
+  <data name="OAuth_Email_Subject" xml:space="preserve">
+    <value>UrfIdentity Code</value>
+  </data>
+  <data name="OAuth_SMS_Body" xml:space="preserve">
+    <value>Your UrfIdentity security code is {0}</value>
+  </data>
+</root>

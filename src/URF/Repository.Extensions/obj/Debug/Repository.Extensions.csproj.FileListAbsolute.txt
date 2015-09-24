@@ -1,0 +1,7 @@
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Extensions\bin\Debug\Repository.Extensions.dll
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Extensions\bin\Debug\Repository.Extensions.pdb
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Extensions\bin\Debug\Abl.Data.dll
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Extensions\bin\Debug\Abl.Data.pdb
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Extensions\obj\Debug\Repository.Extensions.csprojResolveAssemblyReference.cache
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Extensions\obj\Debug\Repository.Extensions.dll
+D:\Development\Projects\VS2015\UrfIdentity\URF\Repository.Extensions\obj\Debug\Repository.Extensions.pdb

@@ -1,0 +1,7 @@
+D:\Development\Projects\VS2015\UrfIdentity\Identity\Identity.Resources\bin\Debug\Identity.Resources.dll
+D:\Development\Projects\VS2015\UrfIdentity\Identity\Identity.Resources\bin\Debug\Identity.Resources.pdb
+D:\Development\Projects\VS2015\UrfIdentity\Identity\Identity.Resources\obj\Debug\Identity.Resources.csprojResolveAssemblyReference.cache
+D:\Development\Projects\VS2015\UrfIdentity\Identity\Identity.Resources\obj\Debug\Identity.Resources.AccountResources.resources
+D:\Development\Projects\VS2015\UrfIdentity\Identity\Identity.Resources\obj\Debug\Identity.Resources.csproj.GenerateResource.Cache
+D:\Development\Projects\VS2015\UrfIdentity\Identity\Identity.Resources\obj\Debug\Identity.Resources.dll
+D:\Development\Projects\VS2015\UrfIdentity\Identity\Identity.Resources\obj\Debug\Identity.Resources.pdb
