@@ -1,18 +1,19 @@
 ﻿#region
 
-using Microsoft.Practices.ServiceLocation;
-using Repository.Pattern.DataContext;
-using Repository.Pattern.Infrastructure;
-using Repository.Pattern.Repositories;
-using Repository.Pattern.UnitOfWork;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Data.Common;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Practices.ServiceLocation;
+using Repository.Pattern.DataContext;
+using Repository.Pattern.Infrastructure;
+using Repository.Pattern.Repositories;
+using Repository.Pattern.UnitOfWork;
 
 #endregion
 
@@ -22,7 +23,7 @@ namespace Repository.Pattern.Ef6
     {
         #region Private Fields
 
-        private IDataContextAsync _dataContextAsync;
+        private IDataContextAsync _dataContext;
         private bool _disposed;
         private ObjectContext _objectContext;
         private DbTransaction _transaction;
@@ -32,9 +33,9 @@ namespace Repository.Pattern.Ef6
 
         #region Constuctor/Dispose
 
-        public UnitOfWork(IDataContextAsync dataContextAsync)
+        public UnitOfWork(IDataContextAsync dataContext)
         {
-            _dataContextAsync = dataContextAsync;
+            _dataContext = dataContext;
             _repositories = new Dictionary<string, dynamic>();
         }
 
@@ -66,10 +67,10 @@ namespace Repository.Pattern.Ef6
                     // do nothing, the objectContext has already been disposed
                 }
 
-                if (_dataContextAsync != null)
+                if (_dataContext != null)
                 {
-                    _dataContextAsync.Dispose();
-                    _dataContextAsync = null;
+                    _dataContext.Dispose();
+                    _dataContext = null;
                 }
             }
 
@@ -83,7 +84,7 @@ namespace Repository.Pattern.Ef6
 
         public int SaveChanges()
         {
-            return _dataContextAsync.SaveChanges();
+            return _dataContext.SaveChanges();
         }
 
         public IRepository<TEntity> Repository<TEntity>() where TEntity : class, IObjectState
@@ -98,12 +99,12 @@ namespace Repository.Pattern.Ef6
 
         public Task<int> SaveChangesAsync()
         {
-            return _dataContextAsync.SaveChangesAsync();
+            return _dataContext.SaveChangesAsync();
         }
 
         public Task<int> SaveChangesAsync(CancellationToken cancellationToken)
         {
-            return _dataContextAsync.SaveChangesAsync(cancellationToken);
+            return _dataContext.SaveChangesAsync(cancellationToken);
         }
 
         public IRepositoryAsync<TEntity> RepositoryAsync<TEntity>() where TEntity : class, IObjectState
@@ -127,7 +128,7 @@ namespace Repository.Pattern.Ef6
 
             var repositoryType = typeof(Repository<>);
 
-            _repositories.Add(type, Activator.CreateInstance(repositoryType.MakeGenericType(typeof(TEntity)), _dataContextAsync, this));
+            _repositories.Add(type, Activator.CreateInstance(repositoryType.MakeGenericType(typeof(TEntity)), _dataContext, this));
 
             return _repositories[type];
         }
@@ -136,7 +137,7 @@ namespace Repository.Pattern.Ef6
 
         public void BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified)
         {
-            _objectContext = ((IObjectContextAdapter) _dataContextAsync).ObjectContext;
+            _objectContext = ((IObjectContextAdapter) _dataContext).ObjectContext;
             if (_objectContext.Connection.State != ConnectionState.Open)
             {
                 _objectContext.Connection.Open();
@@ -154,7 +155,7 @@ namespace Repository.Pattern.Ef6
         public void Rollback()
         {
             _transaction.Rollback();
-            _dataContextAsync.SyncObjectsStatePostCommit();
+            _dataContext.SyncObjectsStatePostCommit();
         }
 
         #endregion

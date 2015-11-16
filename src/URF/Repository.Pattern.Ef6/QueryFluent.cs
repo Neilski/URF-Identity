@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 using Repository.Pattern.Infrastructure;
 using Repository.Pattern.Repositories;
 
-
 namespace Repository.Pattern.Ef6
 {
-    public sealed class QueryFluent<TEntity> : IQueryFluent<TEntity>
-        where TEntity : class, IObjectState
+    public sealed class QueryFluent<TEntity> : IQueryFluent<TEntity> where TEntity : class, IObjectState
     {
         #region Private Fields
         private readonly Expression<Func<TEntity, bool>> _expression;
@@ -19,7 +17,6 @@ namespace Repository.Pattern.Ef6
         private Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> _orderBy;
         #endregion Private Fields
 
-
         #region Constructors
         public QueryFluent(Repository<TEntity> repository)
         {
@@ -27,22 +24,12 @@ namespace Repository.Pattern.Ef6
             _includes = new List<Expression<Func<TEntity, object>>>();
         }
 
-        public QueryFluent(Repository<TEntity> repository,
-            IQueryObject<TEntity> queryObject) : this(repository)
-        {
-            _expression = queryObject.Query();
-        }
+        public QueryFluent(Repository<TEntity> repository, IQueryObject<TEntity> queryObject) : this(repository) { _expression = queryObject.Query(); }
 
-        public QueryFluent(Repository<TEntity> repository,
-            Expression<Func<TEntity, bool>> expression) : this(repository)
-        {
-            _expression = expression;
-        }
+        public QueryFluent(Repository<TEntity> repository, Expression<Func<TEntity, bool>> expression) : this(repository) { _expression = expression; }
         #endregion Constructors
 
-
-        public IQueryFluent<TEntity> OrderBy(
-            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy)
+        public IQueryFluent<TEntity> OrderBy(Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy)
         {
             _orderBy = orderBy;
             return this;
@@ -60,25 +47,12 @@ namespace Repository.Pattern.Ef6
             return _repository.Select(_expression, _orderBy, _includes, page, pageSize);
         }
 
-        public IEnumerable<TEntity> Select()
-        {
-            return _repository.Select(_expression, _orderBy, _includes);
-        }
+        public IEnumerable<TEntity> Select() { return _repository.Select(_expression, _orderBy, _includes); }
 
-        public IEnumerable<TResult> Select<TResult>(
-            Expression<Func<TEntity, TResult>> selector)
-        {
-            return _repository.Select(_expression, _orderBy, _includes).Select(selector);
-        }
+        public IEnumerable<TResult> Select<TResult>(Expression<Func<TEntity, TResult>> selector) { return _repository.Select(_expression, _orderBy, _includes).Select(selector); }
 
-        public async Task<IEnumerable<TEntity>> SelectAsync()
-        {
-            return await _repository.SelectAsync(_expression, _orderBy, _includes);
-        }
+        public async Task<IEnumerable<TEntity>> SelectAsync() { return await _repository.SelectAsync(_expression, _orderBy, _includes); }
 
-        public IQueryable<TEntity> SqlQuery(string query, params object[] parameters)
-        {
-            return _repository.SelectQuery(query, parameters).AsQueryable();
-        }
+        public IQueryable<TEntity> SqlQuery(string query, params object[] parameters) { return _repository.SelectQuery(query, parameters).AsQueryable(); }
     }
 }

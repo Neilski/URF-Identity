@@ -9,6 +9,7 @@ using Identity.UI.ViewModels.Account;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using Repository.Pattern.Infrastructure;
 using UrfIdentity.DAL.Repository.Infrastructure;
 using UrfIdentity.DAL.Service.Interfaces;
 using UrfIdentity.Models;
@@ -24,6 +25,7 @@ namespace UrfIdentity.Web.Controllers
     {
         private readonly IUrfIdentityUnitOfWorkAsync _unitOfWork;
         private readonly IApplicationUserService _applicationUserService;
+
 
 
         #region CTORs
@@ -43,6 +45,7 @@ namespace UrfIdentity.Web.Controllers
         {
         }
         #endregion CTORs
+
 
 
         //
@@ -632,6 +635,7 @@ namespace UrfIdentity.Web.Controllers
         }
 
 
+
         #region Helpers
         private async Task<DateTime?> SetLastLoginDateTime(Guid userId)
         {
@@ -721,13 +725,14 @@ namespace UrfIdentity.Web.Controllers
                 UserName = model.Email,
                 Email = model.Email,
                 Created = DateTime.Now, // Custom field initialiser
-                UserDetails = new ApplicationUserDetails
+                UserDetails = new ApplicationUserDetails // Custom field initialiser
                 {
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     JobTitle = model.JobTitle,
                     Company = model.Company,
-                    Phone = model.Phone
+                    Phone = model.Phone,
+                    ObjectState = ObjectState.Added // Still necessary!
                 }
             };
 

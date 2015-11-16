@@ -1,7 +1,9 @@
 ﻿#region
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
@@ -63,7 +65,7 @@ namespace Repository.Pattern.Ef6
 
         public virtual void Insert(TEntity entity)
         {
-            entity.ObjectState = ObjectState.Added;
+            entity.ObjectState = ObjectState.Added;;
             _dbSet.Attach(entity);
             _context.SyncObjectState(entity);
         }

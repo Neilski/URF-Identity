@@ -1,5 +1,6 @@
 using System;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Threading.Tasks;
 using Repository.Pattern.DataContext;
@@ -8,12 +9,24 @@ using Repository.Pattern.Infrastructure;
 
 namespace Repository.Pattern.Ef6
 {
+    /// <summary>
+    /// This class has been modified to allow more flexible SyncObjectsStatePreCommit()
+    /// processing for Microsoft's Identity 2.0 entities - specifically the management 
+    /// and synchronisation of the base entity state and the URF's IObjectState.
+    /// 
+    /// See the SyncObjectsStatePreCommit() method below and the introduced
+    /// ProcessObjectStatePreCommit(DbEntityEntry dbEntityEntry) virtual method.
+    /// 
+    /// Neil Martin - 16th November 2015
+    /// </summary>
     public class DataContext : DbContext, IDataContextAsync
     {
         #region Private Fields
         private readonly Guid _instanceId;
-        bool _disposed;
+        private bool _disposed;
         #endregion Private Fields
+
+
 
         public DataContext(string nameOrConnectionString) : base(nameOrConnectionString)
         {
@@ -22,7 +35,12 @@ namespace Repository.Pattern.Ef6
             Configuration.ProxyCreationEnabled = false;
         }
 
-        public Guid InstanceId { get { return _instanceId; } }
+
+        public Guid InstanceId
+        {
+            get { return _instanceId; }
+        }
+
 
         /// <summary>
         ///     Saves all changes made in this context to the underlying database.
@@ -53,6 +71,7 @@ namespace Repository.Pattern.Ef6
             return changes;
         }
 
+
         /// <summary>
         ///     Asynchronously saves all changes made in this context to the underlying database.
         /// </summary>
@@ -72,19 +91,16 @@ namespace Repository.Pattern.Ef6
         /// <exception cref="System.InvalidOperationException">
         ///     Some error occurred attempting to process entities in the context either
         ///     before or after sending commands to the database.</exception>
-        /// <seealso>
-        ///     <cref>DbContext.SaveChangesAsync</cref>
-        /// </seealso>
+        /// <seealso cref="DbContext.SaveChangesAsync"/>
         /// <returns>A task that represents the asynchronous save operation.  The 
-        ///     <see>Task.Result
-        ///         <cref>Task.Result</cref>
-        ///     </see> contains the number of 
+        ///     <see cref="Task.Result">Task.Result</see> contains the number of 
         ///     objects written to the underlying database.</returns>
         public override async Task<int> SaveChangesAsync()
         {
             return await this.SaveChangesAsync(CancellationToken.None);
         }
 
+
         /// <summary>
         ///     Asynchronously saves all changes made in this context to the underlying database.
         /// </summary>
@@ -104,42 +120,69 @@ namespace Repository.Pattern.Ef6
         /// <exception cref="System.InvalidOperationException">
         ///     Some error occurred attempting to process entities in the context either
         ///     before or after sending commands to the database.</exception>
-        /// <seealso>
-        ///     <cref>DbContext.SaveChangesAsync</cref>
-        /// </seealso>
+        /// <seealso cref="DbContext.SaveChangesAsync"/>
         /// <returns>A task that represents the asynchronous save operation.  The 
-        ///     <see>Task.Result
-        ///         <cref>Task.Result</cref>
-        ///     </see> contains the number of 
+        ///     <see cref="Task.Result">Task.Result</see> contains the number of 
         ///     objects written to the underlying database.</returns>
-        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken)
+        public override async Task<int> SaveChangesAsync(
+            CancellationToken cancellationToken)
         {
-            // SyncObjectsStatePreCommit();
+            SyncObjectsStatePreCommit();
             var changesAsync = await base.SaveChangesAsync(cancellationToken);
-            // SyncObjectsStatePostCommit();
+            SyncObjectsStatePostCommit();
             return changesAsync;
         }
 
-        public void SyncObjectState<TEntity>(TEntity entity) where TEntity : class, IObjectState
+
+        public void SyncObjectState<TEntity>(TEntity entity)
+            where TEntity : class, IObjectState
         {
             Entry(entity).State = StateHelper.ConvertState(entity.ObjectState);
         }
 
+
+        /// <remarks>
+        /// This method has been modified to call the newly introduced 
+        /// ProcessObjectStatePreCommit() virtual method.
+        /// 
+        /// Neil Martin - 16th November 2015
+        /// </remarks>
         private void SyncObjectsStatePreCommit()
         {
             foreach (var dbEntityEntry in ChangeTracker.Entries())
             {
-                dbEntityEntry.State = StateHelper.ConvertState(((IObjectState)dbEntityEntry.Entity).ObjectState);
+                ProcessObjectStatePreCommit(dbEntityEntry);
             }
         }
+
+
+        /// <remarks>
+        /// This virtual method was introduced to allow the final application DataContext
+        /// the opportunity to process Microsoft's Identity 2.0 entities separately from
+        /// native URF dervived and managed entities.
+        /// 
+        /// Microsoft's Identity 2.0 framework knows nothing about IObjectState so it is
+        /// therfore necessary to override the default URF SyncObjectsStatePreCommit()
+        /// method to ensure that the DataContext entity state is managed correctly.
+        /// 
+        /// Neil Martin - 16th November 2015
+        /// </remarks>
+        protected virtual void ProcessObjectStatePreCommit(DbEntityEntry dbEntityEntry)
+        {
+            dbEntityEntry.State =
+                StateHelper.ConvertState(((IObjectState) dbEntityEntry.Entity).ObjectState);
+        }
+
 
         public void SyncObjectsStatePostCommit()
         {
             foreach (var dbEntityEntry in ChangeTracker.Entries())
             {
-                ((IObjectState)dbEntityEntry.Entity).ObjectState = StateHelper.ConvertState(dbEntityEntry.State);
+                ((IObjectState) dbEntityEntry.Entity).ObjectState =
+                    StateHelper.ConvertState(dbEntityEntry.State);
             }
         }
+
 
         protected override void Dispose(bool disposing)
         {
