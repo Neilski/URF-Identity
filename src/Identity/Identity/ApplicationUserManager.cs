@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
+using Repository.Pattern.Infrastructure;
 using UrfIdentity.Models;
 
 

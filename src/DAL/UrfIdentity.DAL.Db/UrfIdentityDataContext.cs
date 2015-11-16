@@ -74,55 +74,6 @@ namespace UrfIdentity.DAL.Db
 
 
 
-        #region URF Override
-        /// <summary>
-        /// Set the entity state to reflect the URF IObjectState.
-        /// </summary>
-        /// <param name="dbEntityEntry"></param>]
-        /// <remarks>
-        /// This virtual method was introduced into the core URF library as a sub-method
-        /// DataContext's ProcessObjectStatePreCommit() method.  This provided the
-        /// minimum change to the URF source code.
-        /// 
-        /// Neil Martin - 16th November 2015
-        /// </remarks>
-        protected override void ProcessObjectStatePreCommit(DbEntityEntry dbEntityEntry)
-        {
-            var baseType = ObjectContext.GetObjectType(dbEntityEntry.Entity.GetType());
-
-            if (
-                String.Compare(baseType.AssemblyQualifiedName,
-                    typeof (ApplicationUser).AssemblyQualifiedName,
-                    StringComparison.InvariantCultureIgnoreCase) != 0)
-            {
-                base.ProcessObjectStatePreCommit(dbEntityEntry);
-                return;
-            }
-
-
-            // Process Identity entities differently as the Identity 2.0 framework knows 
-            // nothing about IObjectState and will not set it correctly, so...
-            //
-            // Check the base entity state against the URF IObjectState state to see
-            // if the update has been managed by the URF framework (as opposed to the
-            // Microsoft Identity 2.0 framework), otherwise just leave the base entity
-            // state as it is.
-            var urfEntityState =
-                StateHelper.ConvertState(
-                    ((IObjectState) dbEntityEntry.Entity).ObjectState);
-
-            var entityState = dbEntityEntry.State;
-
-            if ((entityState == EntityState.Unchanged) &&
-                (urfEntityState != EntityState.Unchanged))
-            {
-                dbEntityEntry.State = urfEntityState;
-            }
-        }
-        #endregion URF Override
-
-
-
         #region Validation
         // See http://msdn.microsoft.com/en-gb/data/gg193959.aspx
         // and http://stackoverflow.com/a/18736484/236860

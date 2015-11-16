@@ -22,8 +22,3 @@ To get started, I would suggest that you have a quick review of the following fi
 That should be all you need to run the project (if you get database creation errors you might also need to rename the database in the Web.config ConnectionString definition).
 
 Once you have it running, you will probably want to play with the way the Identity work flow is configured - just look at the code and comments in the /Controllers/AccountController.cs.
-
-## Update - Major Change
-There was a bug in the original version of this code that prevented changes made via the Identity 2.0 methods to be persisted in the database.  In summary, Identity 2.0 know nothing about the URF's IObjectState management so the URF DataContext's SaveChanges() and SaveChangesAsync() methods could not correctly detect and management the entity state (because IObjectState was left 'unchanged').
-
-The approach taken to address this problem (there may well be other/better solutions!) was to override the Repository.Pattern.Ef6.DataContext class and insert a new virtual method called from the body of the SyncObjectsStatePreCommit() method.  This virtual method is then overridden in the final Application DataContext to look for and manage Identity 2.0 based entities differently to native URF derived entities.

@@ -1,6 +1,5 @@
 using System;
 using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Threading.Tasks;
 using Repository.Pattern.DataContext;
@@ -9,16 +8,6 @@ using Repository.Pattern.Infrastructure;
 
 namespace Repository.Pattern.Ef6
 {
-    /// <summary>
-    /// This class has been modified to allow more flexible SyncObjectsStatePreCommit()
-    /// processing for Microsoft's Identity 2.0 entities - specifically the management 
-    /// and synchronisation of the base entity state and the URF's IObjectState.
-    /// 
-    /// See the SyncObjectsStatePreCommit() method below and the introduced
-    /// ProcessObjectStatePreCommit(DbEntityEntry dbEntityEntry) virtual method.
-    /// 
-    /// Neil Martin - 16th November 2015
-    /// </summary>
     public class DataContext : DbContext, IDataContextAsync
     {
         #region Private Fields
@@ -141,36 +130,14 @@ namespace Repository.Pattern.Ef6
         }
 
 
-        /// <remarks>
-        /// This method has been modified to call the newly introduced 
-        /// ProcessObjectStatePreCommit() virtual method.
-        /// 
-        /// Neil Martin - 16th November 2015
-        /// </remarks>
         private void SyncObjectsStatePreCommit()
         {
             foreach (var dbEntityEntry in ChangeTracker.Entries())
             {
-                ProcessObjectStatePreCommit(dbEntityEntry);
+                dbEntityEntry.State =
+                    StateHelper.ConvertState(
+                        ((IObjectState) dbEntityEntry.Entity).ObjectState);
             }
-        }
-
-
-        /// <remarks>
-        /// This virtual method was introduced to allow the final application DataContext
-        /// the opportunity to process Microsoft's Identity 2.0 entities separately from
-        /// native URF dervived and managed entities.
-        /// 
-        /// Microsoft's Identity 2.0 framework knows nothing about IObjectState so it is
-        /// therfore necessary to override the default URF SyncObjectsStatePreCommit()
-        /// method to ensure that the DataContext entity state is managed correctly.
-        /// 
-        /// Neil Martin - 16th November 2015
-        /// </remarks>
-        protected virtual void ProcessObjectStatePreCommit(DbEntityEntry dbEntityEntry)
-        {
-            dbEntityEntry.State =
-                StateHelper.ConvertState(((IObjectState) dbEntityEntry.Entity).ObjectState);
         }
 
 

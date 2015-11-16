@@ -26,7 +26,8 @@ namespace Identity
         /// <param name="isRoles">User must be in these roles</param>
         /// <param name="notRoles">User must not be in these roles</param>
         /// <returns>True if the user satisfies the role assignments; otherwise false</returns>
-        public static bool IsAndNot(this IPrincipal user, string [] isRoles, string [] notRoles)
+        public static bool IsAndNot(this IPrincipal user, string[] isRoles,
+            string[] notRoles)
         {
             if (isRoles != null)
             {
