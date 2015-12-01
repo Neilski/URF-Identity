@@ -19,10 +19,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2015 12:04:58</publishTime>
     </File>
     <File Include="App_Start/Startup.ConfigureAuth.cs">
-      <publishTime>09/24/2015 12:27:26</publishTime>
+      <publishTime>11/30/2015 16:21:40</publishTime>
     </File>
     <File Include="App_Start/Startup.ConfigureContainer.cs">
-      <publishTime>09/24/2015 11:46:01</publishTime>
+      <publishTime>11/30/2015 17:47:05</publishTime>
     </File>
     <File Include="App_Start/WebApiConfig.cs">
       <publishTime>09/24/2015 12:12:24</publishTime>
@@ -94,22 +94,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2015 08:17:38</publishTime>
     </File>
     <File Include="bin/Identity.dll">
-      <publishTime>09/24/2015 13:53:02</publishTime>
+      <publishTime>12/01/2015 09:37:31</publishTime>
     </File>
     <File Include="bin/Identity.pdb">
-      <publishTime>09/24/2015 13:53:02</publishTime>
+      <publishTime>12/01/2015 09:37:31</publishTime>
     </File>
     <File Include="bin/Identity.Resources.dll">
-      <publishTime>09/24/2015 13:53:00</publishTime>
+      <publishTime>11/30/2015 16:35:01</publishTime>
     </File>
     <File Include="bin/Identity.Resources.pdb">
-      <publishTime>09/24/2015 13:53:00</publishTime>
+      <publishTime>11/30/2015 16:35:01</publishTime>
     </File>
     <File Include="bin/Identity.UI.dll">
-      <publishTime>09/24/2015 13:53:01</publishTime>
+      <publishTime>11/30/2015 16:35:02</publishTime>
     </File>
     <File Include="bin/Identity.UI.pdb">
-      <publishTime>09/24/2015 13:53:01</publishTime>
+      <publishTime>11/30/2015 16:35:02</publishTime>
     </File>
     <File Include="bin/LinqKit.dll">
       <publishTime>09/24/2015 08:37:04</publishTime>
@@ -223,16 +223,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2015 13:53:00</publishTime>
     </File>
     <File Include="bin/Repository.Pattern.dll">
-      <publishTime>09/24/2015 13:53:00</publishTime>
+      <publishTime>11/16/2015 09:16:27</publishTime>
     </File>
     <File Include="bin/Repository.Pattern.Ef6.dll">
-      <publishTime>09/24/2015 13:53:00</publishTime>
+      <publishTime>12/01/2015 09:37:31</publishTime>
     </File>
     <File Include="bin/Repository.Pattern.Ef6.pdb">
-      <publishTime>09/24/2015 13:53:00</publishTime>
+      <publishTime>12/01/2015 09:37:31</publishTime>
     </File>
     <File Include="bin/Repository.Pattern.pdb">
-      <publishTime>09/24/2015 13:53:00</publishTime>
+      <publishTime>11/16/2015 09:16:27</publishTime>
     </File>
     <File Include="bin/Resources.dll">
       <publishTime>09/24/2015 13:53:00</publishTime>
@@ -283,10 +283,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2015 08:17:41</publishTime>
     </File>
     <File Include="bin/Service.Pattern.dll">
-      <publishTime>09/24/2015 13:53:00</publishTime>
+      <publishTime>11/16/2015 09:17:42</publishTime>
     </File>
     <File Include="bin/Service.Pattern.pdb">
-      <publishTime>09/24/2015 13:53:00</publishTime>
+      <publishTime>11/16/2015 09:17:42</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>09/24/2015 08:17:37</publishTime>
@@ -358,37 +358,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2015 11:27:55</publishTime>
     </File>
     <File Include="bin/UrfIdentity.DAL.Db.dll">
-      <publishTime>09/24/2015 13:53:01</publishTime>
+      <publishTime>12/01/2015 09:37:31</publishTime>
     </File>
     <File Include="bin/UrfIdentity.DAL.Db.pdb">
-      <publishTime>09/24/2015 13:53:01</publishTime>
+      <publishTime>12/01/2015 09:37:31</publishTime>
     </File>
     <File Include="bin/UrfIdentity.DAL.Repository.dll">
-      <publishTime>09/24/2015 13:53:02</publishTime>
+      <publishTime>12/01/2015 09:37:32</publishTime>
     </File>
     <File Include="bin/UrfIdentity.DAL.Repository.pdb">
-      <publishTime>09/24/2015 13:53:02</publishTime>
+      <publishTime>12/01/2015 09:37:32</publishTime>
     </File>
     <File Include="bin/UrfIdentity.DAL.Service.dll">
-      <publishTime>09/24/2015 13:53:03</publishTime>
+      <publishTime>12/01/2015 09:37:32</publishTime>
     </File>
     <File Include="bin/UrfIdentity.DAL.Service.pdb">
-      <publishTime>09/24/2015 13:53:03</publishTime>
+      <publishTime>12/01/2015 09:37:32</publishTime>
     </File>
     <File Include="bin/UrfIdentity.Models.dll">
-      <publishTime>09/24/2015 13:53:00</publishTime>
+      <publishTime>11/16/2015 09:16:28</publishTime>
     </File>
     <File Include="bin/UrfIdentity.Models.pdb">
-      <publishTime>09/24/2015 13:53:00</publishTime>
+      <publishTime>11/16/2015 09:16:28</publishTime>
     </File>
     <File Include="bin/UrfIdentity.Web.dll">
-      <publishTime>09/24/2015 13:55:36</publishTime>
+      <publishTime>12/01/2015 09:37:33</publishTime>
     </File>
     <File Include="bin/UrfIdentity.Web.dll.config">
-      <publishTime>09/24/2015 13:36:12</publishTime>
+      <publishTime>12/01/2015 09:35:40</publishTime>
     </File>
     <File Include="bin/UrfIdentity.Web.pdb">
-      <publishTime>09/24/2015 13:55:36</publishTime>
+      <publishTime>12/01/2015 09:37:33</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>09/24/2015 08:24:35</publishTime>
@@ -448,7 +448,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2015 12:57:29</publishTime>
     </File>
     <File Include="Controllers/AccountController.cs">
-      <publishTime>09/24/2015 12:08:29</publishTime>
+      <publishTime>11/30/2015 16:56:52</publishTime>
     </File>
     <File Include="Controllers/BaseIdentityController.cs">
       <publishTime>09/24/2015 12:04:27</publishTime>
@@ -458,6 +458,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Controllers/ManageController.cs">
       <publishTime>09/24/2015 12:05:21</publishTime>
+    </File>
+    <File Include="Controllers/RoleManagerController.cs">
+      <publishTime>12/01/2015 09:19:26</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>09/24/2015 08:17:25</publishTime>
@@ -483,6 +486,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Global.asax.cs">
       <publishTime>09/24/2015 12:05:05</publishTime>
     </File>
+    <File Include="Models/RoleManager/AssignUserRoleViewModel.cs">
+      <publishTime>12/01/2015 09:19:26</publishTime>
+    </File>
+    <File Include="Models/RoleManager/CreateRoleViewModel.cs">
+      <publishTime>12/01/2015 09:19:26</publishTime>
+    </File>
+    <File Include="Models/RoleManager/DeleteRoleViewModel.cs">
+      <publishTime>12/01/2015 09:19:26</publishTime>
+    </File>
+    <File Include="Models/RoleManager/UnassignUserRoleViewModel.cs">
+      <publishTime>12/01/2015 09:19:26</publishTime>
+    </File>
     <File Include="packages.config">
       <publishTime>09/24/2015 12:04:58</publishTime>
     </File>
@@ -493,7 +508,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2015 13:54:53</publishTime>
     </File>
     <File Include="Properties/PublishProfiles/GitHub.pubxml.user">
-      <publishTime>09/24/2015 13:54:53</publishTime>
+      <publishTime>09/24/2015 13:55:44</publishTime>
     </File>
     <File Include="roslyn/csc.exe">
       <publishTime>09/24/2015 08:17:40</publishTime>
@@ -592,10 +607,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2015 12:12:31</publishTime>
     </File>
     <File Include="UrfIdentity.Web.csproj">
-      <publishTime>09/24/2015 13:55:34</publishTime>
+      <publishTime>12/01/2015 09:19:26</publishTime>
     </File>
     <File Include="UrfIdentity.Web.csproj.user">
-      <publishTime>09/24/2015 13:55:34</publishTime>
+      <publishTime>12/01/2015 09:19:26</publishTime>
     </File>
     <File Include="Views/Account/ConfirmationEmailSent.cshtml">
       <publishTime>09/24/2015 11:14:11</publishTime>
@@ -675,6 +690,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Manage/VerifyPhoneNumber.cshtml">
       <publishTime>09/24/2015 12:04:58</publishTime>
     </File>
+    <File Include="Views/RoleManager/AssignRole.cshtml">
+      <publishTime>12/01/2015 09:21:28</publishTime>
+    </File>
+    <File Include="Views/RoleManager/CreateRole.cshtml">
+      <publishTime>12/01/2015 09:21:28</publishTime>
+    </File>
+    <File Include="Views/RoleManager/DeleteRole.cshtml">
+      <publishTime>12/01/2015 09:21:28</publishTime>
+    </File>
+    <File Include="Views/RoleManager/Index.cshtml">
+      <publishTime>12/01/2015 09:21:28</publishTime>
+    </File>
+    <File Include="Views/RoleManager/UnassignRole.cshtml">
+      <publishTime>12/01/2015 09:21:28</publishTime>
+    </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>09/24/2015 12:04:58</publishTime>
     </File>
@@ -682,7 +712,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2015 12:04:58</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>09/24/2015 13:10:30</publishTime>
+      <publishTime>12/01/2015 09:19:26</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>09/24/2015 13:06:42</publishTime>
@@ -694,10 +724,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/24/2015 12:04:58</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/24/2015 13:55:36</publishTime>
+      <publishTime>12/01/2015 09:37:34</publishTime>
     </File>
     <File Include="Web.Debug.config">
-      <publishTime>09/24/2015 12:04:58</publishTime>
+      <publishTime>12/01/2015 09:35:39</publishTime>
     </File>
     <File Include="Web.Release.config">
       <publishTime>09/24/2015 12:04:58</publishTime>

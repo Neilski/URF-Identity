@@ -1,1 +1,0 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="UrfIdentity.Web.MvcApplication" Language="C#" %>

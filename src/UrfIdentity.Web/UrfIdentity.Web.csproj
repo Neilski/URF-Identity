@@ -216,9 +216,14 @@
     <Compile Include="Controllers\BaseIdentityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoleManagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RoleManager\UnassignUserRoleViewModel.cs" />
+    <Compile Include="Models\RoleManager\AssignUserRoleViewModel.cs" />
+    <Compile Include="Models\RoleManager\DeleteRoleViewModel.cs" />
+    <Compile Include="Models\RoleManager\CreateRoleViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Identity\EmailMessageService.cs" />
     <Compile Include="Services\Identity\SmsMessageService.cs" />
@@ -320,10 +325,14 @@
     <Content Include="Views\Manage\ManageLogins.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\RoleManager\CreateRole.cshtml" />
+    <Content Include="Views\RoleManager\Index.cshtml" />
+    <Content Include="Views\RoleManager\DeleteRole.cshtml" />
+    <Content Include="Views\RoleManager\AssignRole.cshtml" />
+    <Content Include="Views\RoleManager\UnassignRole.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

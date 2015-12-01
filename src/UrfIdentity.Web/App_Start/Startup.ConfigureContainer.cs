@@ -1,9 +1,12 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using System.Web.Http;
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
+using Identity;
+using Microsoft.AspNet.Identity;
 using Owin;
 using UrfIdentity.DAL.Db;
 using UrfIdentity.DAL.Repository.Infrastructure;
@@ -114,6 +117,15 @@ namespace UrfIdentity.Web
 
         private static void RegisterIdentity(ContainerBuilder builder)
         {
+            // Wire up the IdentityRoleManager
+            builder.RegisterType<ApplicationRoleStore>()
+                .As<IRoleStore<ApplicationRole, Guid>>()
+                .InstancePerRequest();
+
+            builder.RegisterType<ApplicationRoleManager>()
+                .InstancePerRequest();
+
+
             // Repositories
             builder.RegisterType<UrfIdentityRepository<ApplicationUser>>()
                 .As<IUrfIdentityRepositoryAsync<ApplicationUser>>()

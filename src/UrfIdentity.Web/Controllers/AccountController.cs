@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -535,83 +536,92 @@ namespace UrfIdentity.Web.Controllers
                 // case SignInStatus.Failure:
                 default:
 
-                    return View(
-                        "UnassignedExternalLogin",
-                        new UnassignedExternalLoginViewModel
-                        {
-                            Provider = loginInfo.Login.LoginProvider
-                        });
+                    bool forceInitialLocalAccount =
+                        Convert.ToBoolean(
+                            ConfigurationManager.AppSettings["ForceInitialLocalAccount"]);
 
-                // If the user does not have an account, then prompt the 
-                // user to create an account
-                // ViewBag.ReturnUrl = returnUrl;
-                // ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
-                //
-                // return View(
-                //     "ExternalLoginConfirmation",
-                //     new ExternalLoginConfirmationViewModel
-                //     {
-                //         Email = loginInfo.Email
-                //     });
+                    if (forceInitialLocalAccount)
+                    {
+                        return View(
+                            "UnassignedExternalLogin",
+                            new UnassignedExternalLoginViewModel
+                            {
+                                Provider = loginInfo.Login.LoginProvider
+                            });
+                    }
+
+                    // If the user does not have a local account, then prompt the 
+                    // user to create one - or you could do it automatically
+                    ViewBag.ReturnUrl = returnUrl;
+                    ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
+
+                    return View(
+                        "ExternalLoginConfirmation",
+                        new ExternalLoginConfirmationViewModel
+                        {
+                            Email = loginInfo.Email
+                        });
             }
         }
 
 
         //
         // POST: /Account/ExternalLoginConfirmation
-        // [HttpPost]
-        // [AllowAnonymous]
-        // [ValidateAntiForgeryToken]
-        // public async Task<ActionResult> ExternalLoginConfirmation(
-        //     ExternalLoginConfirmationViewModel model,
-        //     string returnUrl)
-        // {
-        //     if (User.Identity.IsAuthenticated)
-        //     {
-        //         return RedirectToAction("Index", "Manage");
-        //     }
-        // 
-        //     if (ModelState.IsValid)
-        //     {
-        //         // Get the information about the user from the external
-        //         // login provider
-        //         var info =
-        //             await AuthenticationManager.GetExternalLoginInfoAsync();
-        // 
-        //         if (info == null)
-        //         {
-        //             return View("ExternalLoginFailure");
-        //         }
-        // 
-        //         var user = new ApplicationUser
-        //         {
-        //             UserName = model.Email,
-        //             Email = model.Email
-        //         };
-        //         
-        //         var result = await UserManager.CreateAsync(user);
-        //         if (result.Succeeded)
-        //         {
-        //             result =
-        //                 await UserManager.AddLoginAsync(user.Id, info.Login);
-        //             if (result.Succeeded)
-        //             {
-        //                 await
-        //                     SignInManager.SignInAsync(
-        //                         user, isPersistent: false,
-        //                         rememberBrowser: false);
-        //         
-        //         
-        //                 return RedirectToLocal(returnUrl);
-        //             }
-        //         }
-        // 
-        //         AddErrors(result);
-        //     }
-        // 
-        //     ViewBag.ReturnUrl = returnUrl;
-        //     return View(model);
-        // }
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ExternalLoginConfirmation(
+            ExternalLoginConfirmationViewModel model,
+            string returnUrl)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Manage");
+            }
+
+            if (ModelState.IsValid)
+            {
+                // Get the information about the user from the external
+                // login provider
+                var info =
+                    await AuthenticationManager.GetExternalLoginInfoAsync();
+
+                if (info == null)
+                {
+                    return View("ExternalLoginFailure");
+                }
+
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    ObjectState = ObjectState.Added,
+                    Created = DateTime.Now
+                };
+
+                var result = await UserManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                    result =
+                        await UserManager.AddLoginAsync(user.Id, info.Login);
+                    if (result.Succeeded)
+                    {
+                        await
+                            SignInManager.SignInAsync(
+                                user, isPersistent: false,
+                                rememberBrowser: false);
+
+
+                        return RedirectToLocal(returnUrl);
+                    }
+                }
+
+                AddErrors(result);
+            }
+
+            ViewBag.ReturnUrl = returnUrl;
+            return View(model);
+        }
 
 
         //

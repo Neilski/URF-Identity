@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Simple Role Manager";
+    string message = TempData["Message"] as string;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    Simple (crude!) utility for testing role creation and assignment.<br/>
+    <em>This is not intended for production!</em>
+</p>
+
+
+@if (!String.IsNullOrWhiteSpace(message))
+{
+    <div class="well well-sm">
+        <h3>Last Action</h3>
+        <p>@message</p>
+    </div>
+}
+
+<ul>
+    <li>@Html.ActionLink("Create Role", "CreateRole", "RoleManager")</li>
+    <li>@Html.ActionLink("Delete Role", "DeleteRole", "RoleManager")</li>
+    <li>@Html.ActionLink("Assign Role", "AssignRole", "RoleManager")</li>
+    <li>@Html.ActionLink("Unassign Role", "UnassignRole", "RoleManager")</li>
+</ul>

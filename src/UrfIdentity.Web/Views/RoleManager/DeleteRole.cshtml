@@ -1,0 +1,30 @@
+﻿@model UrfIdentity.Web.Models.RoleManager.DeleteRoleViewModel
+
+    @{
+        ViewBag.Title = "Delete Role";
+    }
+
+    <h2>@ViewBag.Title</h2>
+
+
+    @using (Html.BeginForm("DeleteRole", "RoleManager", FormMethod.Post,
+                        new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Role, new { @class = "col-xs-2 control-label" })
+            <div class="col-xs-10">
+                @Html.TextBoxFor(m => m.Role, new { @class = "form-control", autofocus = true })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <input type="submit" class="btn btn-default" value="Delete" />
+            </div>
+        </div>
+    }

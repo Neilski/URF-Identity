@@ -1436,7 +1436,7 @@ namespace Identity.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;You have attempted to login with your {0} account but unfortunately the user details are not associated a local UrfIdentity account.&lt;/p&gt;
-        ///&lt;p&gt;You can either &lt;a href=&quot;{1}&quot;&gt;login&lt;/a&gt; using your existing UrfIdentity account and then associate your {0} login to your account &amp;ndash; this will make future logins more convenient, or&amp;helip;  If you do not currently have an UrfIdentity account you can &lt;a href=&quot;{2}&quot;&gt;create one here&lt;/a&gt;.&lt;/p&gt;.
+        ///&lt;p&gt;You can either &lt;a href=&quot;{1}&quot;&gt;login&lt;/a&gt; using your existing UrfIdentity account and then associate your {0} login to your account &amp;ndash; this will make future logins more convenient, or &amp;hellip;  If you do not currently have an UrfIdentity account you can &lt;a href=&quot;{2}&quot;&gt;create one here&lt;/a&gt;.&lt;/p&gt;.
         /// </summary>
         public static string UnassignedExternalLogin_Message {
             get {
